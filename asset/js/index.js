@@ -1,7 +1,7 @@
 /*Ejercicio 1 */
 var container = document.getElementById("c1");
 container.innerText="Primer";
-container.style.backgroundColor="gray";
+container.style.backgroundColor="#000000";
 container.style.color="#1cb723";
 container.style.height="200px";
 container.style.width="200px";
@@ -11,18 +11,37 @@ container.innerHTML="<input type='text' placeholder='Escriba su texto'>";
 
 var containers = document.getElementsByClassName("c2");
 
-for(let i=0 ; i<containers.length; i++)
+Array.prototype.filter.call(containers, function(element)
 {
-    containers[i].innerText="Primer";
-}
+    element.innerText="Primer";
+});
 
 
 /*Cambiar el color del elemento a rojo si este es par*/
-for(let i=0 ; i<containers.length; i++)
+
+Array.prototype.filter.call(containers, function(element)
 {
-    
-    if(i%2 == 0)
-    {
-        containers[i].style.backgroundColor="red";
-    }
+    element.style.backgroundColor="gray";
+});
+
+/*cambie le tamaño de los elementos  width:200px; height:200px*/
+Array.prototype.filter.call(containers, function(element)
+{
+    element.style.width="200px";
+    element.style.height="200px";
+});
+
+/*Agregue una caja de texto */
+Array.prototype.filter.call(containers, function(element)
+{
+    element.innerHTML="<input type='text' placeholder='Escriba su texto'>";
+});
+
+
+/*Ejercio3 eventos */
+var boton=document.getElementById("btn-click");
+
+boton.onclick = function(evt)
+{
+    alert("Hola mundo");
 }
