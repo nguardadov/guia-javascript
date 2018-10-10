@@ -39,9 +39,22 @@ Array.prototype.filter.call(containers, function(element)
 
 
 /*Ejercio3 eventos */
+
+/*al boton con el id btn-click agregele un evento que al momento de darle click 
+este muestre un alert con el mensaje "hola mundo" */
 var boton=document.getElementById("btn-click");
 
 boton.onclick = function(evt)
 {
     alert("Hola mundo");
+}
+
+
+/*copie el contenido del id='textMsj' al label con id='showMsj*/
+var btnCopy = document.getElementById('btnCopy');
+btnCopy.onclick = function(evt)
+{
+    
+    let msj = document.getElementById('textMsj').value;
+    document.getElementById('showMsj').innerText = msj;
 }
